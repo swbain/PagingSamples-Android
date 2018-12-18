@@ -1,19 +1,29 @@
 package com.stephenbain.pagingsamples
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
-        logIn.setOnClickListener { launchLogin() }
+
+        val token = intent.getStringExtra(KEY_TOKEN)
+        Toast.makeText(this, token, Toast.LENGTH_SHORT).show()
     }
 
-    private fun launchLogin() {
-        TODO()
+    companion object {
+        private const val KEY_TOKEN = "token"
+
+        fun newIntent(context: Context, token: String) = Intent(context, MainActivity::class.java).apply {
+            putExtra(KEY_TOKEN, token)
+        }
     }
+
 }
