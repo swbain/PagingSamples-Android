@@ -16,14 +16,22 @@ class NewReleasesDataSource(
 
     override fun loadRange(params: LoadRangeParams, callback: LoadRangeCallback<AlbumSimple>) {
         scope.launch {
-            val paging = getNewReleases(token, params.startPosition)
+            val paging = getNewReleases(
+                token = token,
+                offset = params.startPosition,
+                limit = params.loadSize
+            )
             callback.onResult(paging.items)
         }
     }
 
     override fun loadInitial(params: LoadInitialParams, callback: LoadInitialCallback<AlbumSimple>) {
         scope.launch {
-            val paging = getNewReleases(token, params.requestedStartPosition)
+            val paging = getNewReleases(
+                token = token,
+                offset = params.requestedStartPosition,
+                limit = params.pageSize
+            )
             callback.onResult(paging.items, params.requestedStartPosition, paging.total)
         }
     }

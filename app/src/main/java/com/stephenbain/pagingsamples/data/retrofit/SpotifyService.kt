@@ -12,7 +12,8 @@ interface SpotifyService {
     @GET("browse/new-releases")
     fun getNewReleases(
         @Header("Authorization") token: String,
-        @Query("offset") offset: Int = 0
+        @Query("offset") offset: Int = 0,
+        @Query("limit") limit: Int = 20
     ): Deferred<AlbumsResponse>
 
 }

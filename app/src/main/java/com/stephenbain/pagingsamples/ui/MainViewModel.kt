@@ -24,7 +24,8 @@ class MainViewModel @Inject constructor(private val getNewReleases: GetNewReleas
 
     val newReleases: LiveData<PagedList<AlbumSimple>> = switchMap(token) {
         val config = PagedList.Config.Builder().apply {
-            setPageSize(20)
+            setPageSize(5)
+            setPrefetchDistance(0)
             setEnablePlaceholders(true)
         }.build()
 

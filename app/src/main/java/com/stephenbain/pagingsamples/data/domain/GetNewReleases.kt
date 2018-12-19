@@ -8,8 +8,12 @@ import javax.inject.Inject
 
 class GetNewReleases @Inject constructor(private val spotifyService: SpotifyService) {
 
-    suspend operator fun invoke(token: String, offset: Int = 0): Paging<AlbumSimple> {
-        return spotifyService.getNewReleases("Bearer $token", offset).await().albums
+    suspend operator fun invoke(token: String, offset: Int = 0, limit: Int = 20): Paging<AlbumSimple> {
+        return spotifyService.getNewReleases(
+            token = "Bearer $token",
+            offset = offset,
+            limit = limit
+        ).await().albums
     }
 
 }
