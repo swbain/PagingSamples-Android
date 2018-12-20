@@ -22,7 +22,7 @@ class NewReleasesViewModel @Inject constructor(private val getNewReleases: GetNe
         get() {
             val config = PagedList.Config.Builder().apply {
                 setPageSize(10)
-                setPrefetchDistance(0)
+                setPrefetchDistance(20)
                 setEnablePlaceholders(true)
             }.build()
 

@@ -14,7 +14,7 @@ import com.stephenbain.pagingsamples.data.model.AlbumSimple
 import com.stephenbain.pagingsamples.ui.BaseActivity
 import com.stephenbain.pagingsamples.ui.observeNotNull
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.new_releases.*
+import kotlinx.android.synthetic.main.activity_new_releases.*
 import kotlinx.android.synthetic.main.item_album.view.*
 
 
@@ -27,7 +27,7 @@ class NewReleasesActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.new_releases)
+        setContentView(R.layout.activity_new_releases)
 
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(this)
