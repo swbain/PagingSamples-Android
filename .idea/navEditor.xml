@@ -20,13 +20,13 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="newReleasesActivity">
+                  <entry key="newReleasesFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
                             <option name="x" value="266" />
-                            <option name="y" value="47" />
+                            <option name="y" value="34" />
                           </Point>
                         </option>
                       </LayoutPositions>

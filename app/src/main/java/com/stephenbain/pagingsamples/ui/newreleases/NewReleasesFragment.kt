@@ -11,26 +11,27 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.stephenbain.pagingsamples.R
 import com.stephenbain.pagingsamples.data.model.AlbumSimple
-import com.stephenbain.pagingsamples.ui.BaseActivity
+import com.stephenbain.pagingsamples.ui.BaseFragment
 import com.stephenbain.pagingsamples.ui.observeNotNull
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.activity_new_releases.*
+import kotlinx.android.synthetic.main.fragment_new_releases.*
 import kotlinx.android.synthetic.main.item_album.view.*
 
 
-class NewReleasesActivity : BaseActivity() {
+class NewReleasesFragment : BaseFragment() {
 
     private val viewModel by lazy { getViewModel<NewReleasesViewModel>() }
-
     private val adapter by lazy { NewReleasesAdapter() }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_new_releases, container, false)
+    }
 
-        setContentView(R.layout.activity_new_releases)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
         recycler.adapter = adapter
-        recycler.layoutManager = LinearLayoutManager(this)
+        recycler.layoutManager = LinearLayoutManager(activity)
 
         viewModel.newReleases.observeNotNull(this, ::showList)
     }

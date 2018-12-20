@@ -26,6 +26,6 @@ class HomeFragment : BaseFragment() {
         newReleases.setOnClickListener { viewModel.userClicksNewRelases() }
     }
 
-    private fun launchNewReleases() = findNavController().navigate(R.id.action_homeFragment_to_newReleasesActivity)
+    private fun launchNewReleases() = findNavController().navigate(R.id.action_homeFragment_to_newReleasesFragment)
 
 }

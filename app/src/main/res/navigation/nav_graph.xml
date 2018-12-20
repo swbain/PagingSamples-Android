@@ -11,12 +11,16 @@
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_newReleasesActivity"
-            app:destination="@id/newReleasesActivity" />
+            android:id="@+id/action_homeFragment_to_newReleasesFragment"
+            app:destination="@id/newReleasesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
-    <activity
-        android:id="@+id/newReleasesActivity"
-        android:name="com.stephenbain.pagingsamples.ui.newreleases.NewReleasesActivity"
-        android:label="NewReleasesActivity"
-        tools:layout="@layout/activity_new_releases"/>
+    <fragment
+        android:id="@+id/newReleasesFragment"
+        android:name="com.stephenbain.pagingsamples.ui.newreleases.NewReleasesFragment"
+        android:label="NewReleasesFragment"
+        tools:layout="@layout/fragment_new_releases"/>
 </navigation>
