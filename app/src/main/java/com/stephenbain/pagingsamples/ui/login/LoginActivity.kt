@@ -35,7 +35,7 @@ class LoginActivity : BaseActivity() {
             AuthenticationResponse.Type.TOKEN,
             REDIRECT_URI
         )
-        builder.setScopes(emptyArray())
+        builder.setScopes(arrayOf("playlist-read-private"))
         builder.setShowDialog(false)
         val request = builder.build()
         AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request)

@@ -31,6 +31,7 @@ dependencies {
     def coroutines_version = "1.0.1"
     def retrofit_version = "2.5.0"
     def nav_version = "1.0.0-alpha08"
+    def room_version = "2.1.0-alpha03"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -49,6 +50,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version"
     implementation "android.arch.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-coroutines:$room_version"
 
     implementation 'com.spotify.android:auth:1.1.0'
 

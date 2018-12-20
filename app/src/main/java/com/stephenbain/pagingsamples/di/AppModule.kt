@@ -1,9 +1,12 @@
 package com.stephenbain.pagingsamples.di
 
 import android.content.Context
+import androidx.room.Room
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.stephenbain.pagingsamples.PagingSampleApp
+import com.stephenbain.pagingsamples.data.db.AppDatabase
+import com.stephenbain.pagingsamples.data.db.PlaylistDao
 import com.stephenbain.pagingsamples.data.retrofit.SpotifyService
 import dagger.Binds
 import dagger.Module
@@ -37,6 +40,12 @@ class AppModule {
     @Singleton
     fun providesSpotifyService(retrofit: Retrofit): SpotifyService {
         return retrofit.create(SpotifyService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun providesPlaylistDao(context: Context): PlaylistDao {
+        return Room.databaseBuilder(context, AppDatabase::class.java, "db").build().playlistDao()
     }
 
 }

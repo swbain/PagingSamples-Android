@@ -1,5 +1,8 @@
 package com.stephenbain.pagingsamples.data.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
 
 data class AlbumSimple(
     val uri: String,
@@ -20,3 +23,6 @@ data class Paging<T>(
 )
 
 data class AlbumsResponse(val albums: Paging<AlbumSimple>)
+
+@Entity
+data class Playlist(@PrimaryKey val id: String, val name: String)
