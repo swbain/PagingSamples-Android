@@ -11,7 +11,7 @@ import javax.inject.Singleton
 @Component(modules = [
     AppModule::class,
     LoginActivityModule::class,
-    HomeActivityModule::class,
+    NewReleasesModule::class,
     AndroidSupportInjectionModule::class
 ])
 interface AppComponent : AndroidInjector<PagingSampleApp> {

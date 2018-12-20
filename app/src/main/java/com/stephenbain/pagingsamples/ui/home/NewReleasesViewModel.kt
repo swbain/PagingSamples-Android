@@ -13,7 +13,7 @@ import kotlinx.coroutines.Job
 import javax.inject.Inject
 
 
-class HomeViewModel @Inject constructor(private val getNewReleases: GetNewReleases) : ViewModel() {
+class NewReleasesViewModel @Inject constructor(private val getNewReleases: GetNewReleases) : ViewModel() {
 
     private val parentJob = Job()
     private val scope = CoroutineScope(Dispatchers.Main + parentJob)

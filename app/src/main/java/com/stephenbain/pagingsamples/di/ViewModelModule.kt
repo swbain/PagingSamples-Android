@@ -2,7 +2,7 @@ package com.stephenbain.pagingsamples.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.stephenbain.pagingsamples.ui.home.HomeViewModel
+import com.stephenbain.pagingsamples.ui.home.NewReleasesViewModel
 import com.stephenbain.pagingsamples.ui.login.LoginViewModel
 import com.stephenbain.spotifytools.android.viewmodel.PagingSampleViewModelFactory
 import dagger.Binds
@@ -14,8 +14,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(HomeViewModel::class)
-    abstract fun bindMainViewModel(homeViewModel: HomeViewModel): ViewModel
+    @ViewModelKey(NewReleasesViewModel::class)
+    abstract fun bindNewReleasesViewModel(newReleasesViewModel: NewReleasesViewModel): ViewModel
 
     @Binds
     @IntoMap

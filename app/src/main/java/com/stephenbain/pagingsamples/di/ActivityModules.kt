@@ -1,6 +1,6 @@
 package com.stephenbain.pagingsamples.di
 
-import com.stephenbain.pagingsamples.ui.home.HomeActivity
+import com.stephenbain.pagingsamples.ui.home.NewReleasesActivity
 import com.stephenbain.pagingsamples.ui.login.LoginActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -13,7 +13,7 @@ abstract class LoginActivityModule {
 }
 
 @Module
-abstract class HomeActivityModule {
+abstract class NewReleasesModule {
     @ContributesAndroidInjector
-    abstract fun contributeMainActivity(): HomeActivity
+    abstract fun contributeMainActivity(): NewReleasesActivity
 }

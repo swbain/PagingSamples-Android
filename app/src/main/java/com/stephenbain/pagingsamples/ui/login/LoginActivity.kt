@@ -2,13 +2,12 @@ package com.stephenbain.pagingsamples.ui.login
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.spotify.sdk.android.authentication.AuthenticationClient
 import com.spotify.sdk.android.authentication.AuthenticationRequest
 import com.spotify.sdk.android.authentication.AuthenticationResponse
 import com.stephenbain.pagingsamples.R
 import com.stephenbain.pagingsamples.ui.BaseActivity
-import com.stephenbain.pagingsamples.ui.home.HomeActivity
+import com.stephenbain.pagingsamples.ui.home.NewReleasesActivity
 import com.stephenbain.pagingsamples.ui.observeEvent
 import com.stephenbain.pagingsamples.ui.snackbar
 import com.stephenbain.pagingsamples.util.CLIENT_ID
@@ -43,7 +42,7 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun launchHome() {
-        startActivity(Intent(this, HomeActivity::class.java))
+        startActivity(Intent(this, NewReleasesActivity::class.java))
         finish()
     }
 
