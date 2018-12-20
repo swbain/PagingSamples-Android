@@ -10,14 +10,12 @@ import kotlinx.coroutines.launch
 
 class NewReleasesDataSource(
     private val scope: CoroutineScope,
-    private val getNewReleases: GetNewReleases,
-    private val token: String
+    private val getNewReleases: GetNewReleases
 ) : PositionalDataSource<AlbumSimple>() {
 
     override fun loadRange(params: LoadRangeParams, callback: LoadRangeCallback<AlbumSimple>) {
         scope.launch {
             val paging = getNewReleases(
-                token = token,
                 offset = params.startPosition,
                 limit = params.loadSize
             )
@@ -28,7 +26,6 @@ class NewReleasesDataSource(
     override fun loadInitial(params: LoadInitialParams, callback: LoadInitialCallback<AlbumSimple>) {
         scope.launch {
             val paging = getNewReleases(
-                token = token,
                 offset = params.requestedStartPosition,
                 limit = params.pageSize
             )
@@ -39,10 +36,9 @@ class NewReleasesDataSource(
 
 class NewReleasesDataSourceFactory(
     private val scope: CoroutineScope,
-    private val getNewReleases: GetNewReleases,
-    private val token: String
+    private val getNewReleases: GetNewReleases
 ) : DataSource.Factory<Int, AlbumSimple>() {
     override fun create(): DataSource<Int, AlbumSimple> {
-        return NewReleasesDataSource(scope, getNewReleases, token)
+        return NewReleasesDataSource(scope, getNewReleases)
     }
 }

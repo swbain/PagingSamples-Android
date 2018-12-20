@@ -1,19 +1,19 @@
 package com.stephenbain.pagingsamples.di
 
-import com.spotify.sdk.android.authentication.LoginActivity
-import com.stephenbain.pagingsamples.ui.MainActivity
+import com.stephenbain.pagingsamples.ui.home.HomeActivity
+import com.stephenbain.pagingsamples.ui.login.LoginActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 
 @Module
-abstract class LoginActivityModule() {
+abstract class LoginActivityModule {
     @ContributesAndroidInjector
     abstract fun contributeLoginActivity(): LoginActivity
 }
 
 @Module
-abstract class MainActivityModule() {
+abstract class HomeActivityModule {
     @ContributesAndroidInjector
-    abstract fun contributeMainActivity(): MainActivity
+    abstract fun contributeMainActivity(): HomeActivity
 }
