@@ -1,4 +1,4 @@
-package com.stephenbain.pagingsamples.ui.home
+package com.stephenbain.pagingsamples.ui.newreleases
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

@@ -2,7 +2,7 @@ package com.stephenbain.pagingsamples.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.stephenbain.pagingsamples.ui.home.NewReleasesViewModel
+import com.stephenbain.pagingsamples.ui.newreleases.NewReleasesViewModel
 import com.stephenbain.pagingsamples.ui.login.LoginViewModel
 import com.stephenbain.spotifytools.android.viewmodel.PagingSampleViewModelFactory
 import dagger.Binds

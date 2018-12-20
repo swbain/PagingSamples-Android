@@ -7,7 +7,7 @@ import com.spotify.sdk.android.authentication.AuthenticationRequest
 import com.spotify.sdk.android.authentication.AuthenticationResponse
 import com.stephenbain.pagingsamples.R
 import com.stephenbain.pagingsamples.ui.BaseActivity
-import com.stephenbain.pagingsamples.ui.home.NewReleasesActivity
+import com.stephenbain.pagingsamples.ui.newreleases.NewReleasesActivity
 import com.stephenbain.pagingsamples.ui.observeEvent
 import com.stephenbain.pagingsamples.ui.snackbar
 import com.stephenbain.pagingsamples.util.CLIENT_ID

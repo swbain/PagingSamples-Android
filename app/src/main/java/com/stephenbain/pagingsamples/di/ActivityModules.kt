@@ -1,6 +1,6 @@
 package com.stephenbain.pagingsamples.di
 
-import com.stephenbain.pagingsamples.ui.home.NewReleasesActivity
+import com.stephenbain.pagingsamples.ui.newreleases.NewReleasesActivity
 import com.stephenbain.pagingsamples.ui.login.LoginActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

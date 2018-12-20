@@ -1,4 +1,4 @@
-package com.stephenbain.pagingsamples.ui.home
+package com.stephenbain.pagingsamples.ui.newreleases
 
 import android.os.Bundle
 import android.view.LayoutInflater
