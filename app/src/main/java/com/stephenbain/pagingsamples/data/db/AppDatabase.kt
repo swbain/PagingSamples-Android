@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import com.stephenbain.pagingsamples.data.model.Playlist
 
 
-@Database(entities = arrayOf(Playlist::class), version = 1)
+@Database(entities = [Playlist::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun playlistDao(): PlaylistDao
 }

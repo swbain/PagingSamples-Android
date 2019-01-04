@@ -23,9 +23,13 @@ class HomeFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
 
         viewModel.launchNewReleases.observeEvent(this) { launchNewReleases() }
+        viewModel.launchMyPlaylists.observeEvent(this) { launchMyPlaylists() }
         newReleases.setOnClickListener { viewModel.userClicksNewRelases() }
+        myPlaylists.setOnClickListener { viewModel.userClicksMyPlaylists() }
     }
 
     private fun launchNewReleases() = findNavController().navigate(R.id.action_homeFragment_to_newReleasesFragment)
+
+    private fun launchMyPlaylists() = findNavController().navigate(R.id.action_homeFragment_to_myPlaylistsFragment)
 
 }

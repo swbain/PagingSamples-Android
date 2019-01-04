@@ -3,13 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
 
     <Button
         android:id="@+id/newReleases"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="new releases"
-        tools:ignore="HardcodedText" />
+        android:text="new releases" />
+
+    <Button
+        android:id="@+id/myPlaylists"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="my playlists"/>
 
 </LinearLayout>

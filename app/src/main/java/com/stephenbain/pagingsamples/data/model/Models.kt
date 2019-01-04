@@ -25,4 +25,4 @@ data class Paging<T>(
 data class AlbumsResponse(val albums: Paging<AlbumSimple>)
 
 @Entity
-data class Playlist(@PrimaryKey val id: String, val name: String)
+data class Playlist(val id: String, val name: String, @PrimaryKey(autoGenerate = true) val key: Int)

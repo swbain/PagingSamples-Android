@@ -16,4 +16,7 @@ interface PlaylistDao {
     @Insert
     suspend fun insertAll(playlists: List<Playlist>)
 
+    @Query("SELECT COUNT(*) FROM playlist")
+    suspend fun getItemCount(): Int
+
 }

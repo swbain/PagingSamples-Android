@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
+import androidx.paging.toLiveData
 import com.stephenbain.pagingsamples.data.datasource.NewReleasesDataSourceFactory
 import com.stephenbain.pagingsamples.data.domain.GetNewReleases
 import com.stephenbain.pagingsamples.data.model.AlbumSimple
@@ -27,7 +28,7 @@ class NewReleasesViewModel @Inject constructor(private val getNewReleases: GetNe
             }.build()
 
             val factory = NewReleasesDataSourceFactory(scope, getNewReleases)
-            return LivePagedListBuilder(factory, config).build()
+            return factory.toLiveData(config)
         }
 
     override fun onCleared() {

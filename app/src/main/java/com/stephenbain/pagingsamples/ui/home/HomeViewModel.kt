@@ -13,6 +13,12 @@ class HomeViewModel @Inject constructor() : ViewModel() {
     val launchNewReleases: LiveData<Event<Unit>>
         get() = _launchNewReleases
 
+    private val _launchMyPlaylists = MutableLiveData<Event<Unit>>()
+    val launchMyPlaylists: LiveData<Event<Unit>>
+        get() = _launchMyPlaylists
+
     fun userClicksNewRelases() = _launchNewReleases.postValue(Event(Unit))
+
+    fun userClicksMyPlaylists() = _launchMyPlaylists.postValue(Event(Unit))
 
 }
