@@ -32,7 +32,7 @@ class MyPlaylistsViewModel @Inject constructor(
 
             val factory = playlistDao.getAllPlaylists()
             return LivePagedListBuilder(factory, config)
-                .setBoundaryCallback(PlaylistsBoundaryCallback(20, scope, updatePlaylists))
+                .setBoundaryCallback(PlaylistsBoundaryCallback(scope, 20, updatePlaylists))
                 .build()
         }
 

@@ -8,16 +8,18 @@ import timber.log.Timber
 
 
 class PlaylistsBoundaryCallback(
-    private val pageSize: Int,
     scope: CoroutineScope,
+    private val pageSize: Int,
     private val updatePlaylists: UpdatePlaylists
 ) : PositionalBoundaryCallback<Playlist>(pageSize, scope) {
 
     override suspend fun initialLoad() {
+        Timber.d("initial load")
         updatePlaylists(limit = pageSize)
     }
 
     override suspend fun itemAtEndLoad(offset: Int) {
+        Timber.d("loading item at end")
         try {
             updatePlaylists(limit = pageSize)
         } catch (t: Throwable) {
